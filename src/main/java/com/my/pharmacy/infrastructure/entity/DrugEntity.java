@@ -1,4 +1,4 @@
-package org.example.pharmacy.infrastructure.entity;
+package com.my.pharmacy.infrastructure.entity;
 
 import jakarta.persistence.*;
 
@@ -13,10 +13,6 @@ public class DrugEntity {
     @Basic
     @Column(name = "code", unique = true)
     private String code;
-
-    @Basic
-    @Column(name = "description")
-    private String description;
 
     @Basic
     @Column(name = "name")
@@ -35,7 +31,7 @@ public class DrugEntity {
     private String dose;
 
     @Basic
-    @Column(name = "form")
+    @Column(name = "form") // e.g., Tablet, Syrup, Injection
     private String form;
 
     @Basic
@@ -45,6 +41,17 @@ public class DrugEntity {
     @Basic
     @Column(name = "symptom")
     private String symptom;
+
+    @Basic
+    @Column(name = "prescription_required")
+    private String prescriptionRequired;
+
+    @Basic
+    @Column(name = "storage_requirement")
+    private String storageRequirements;
+
+
+
 
 
     public Long getId() {
@@ -61,14 +68,6 @@ public class DrugEntity {
 
     public void setCode(String code) {
         this.code = code;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
     }
 
     public String getName() {
@@ -127,5 +126,19 @@ public class DrugEntity {
         this.symptom = symptom;
     }
 
+    public String getStorageRequirements() {
+        return storageRequirements;
+    }
 
+    public void setStorageRequirements(String storageRequirements) {
+        this.storageRequirements = storageRequirements;
+    }
+
+    public String getPrescriptionRequired() {
+        return prescriptionRequired;
+    }
+
+    public void setPrescriptionRequired(String prescriptionRequired) {
+        this.prescriptionRequired = prescriptionRequired;
+    }
 }

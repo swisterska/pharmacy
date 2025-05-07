@@ -1,4 +1,4 @@
-package org.my.pharmacy.service.valueObjects;
+package com.my.pharmacy.service.valueObjects;
 
 public class Price {
 
